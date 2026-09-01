@@ -4,9 +4,7 @@ class Solution {
         if (s.length() != goal.length()) {
             return false;
         }
-
-        String temp = s + s;
-
-        return temp.contains(goal);
+        String s1 = s+s;
+        return s1.contains(goal);
     }
 }
