@@ -3,10 +3,9 @@ class Solution {
         HashSet <Integer> map=new HashSet<>();
         for(int i=0;i<nums.length;i++)
         {
-            int k=nums[i];
-            if(map.contains(k))
+            if(map.contains(nums[i]))
             return true;
-            map.add(k);
+            map.add(nums[i]);
         }
         return false;
     }
