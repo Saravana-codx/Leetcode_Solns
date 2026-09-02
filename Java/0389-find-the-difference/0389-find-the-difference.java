@@ -1,23 +1,13 @@
 class Solution {
     public char findTheDifference(String s, String t) {
 
-        HashMap<Character, Integer> map = new HashMap<>();
+        char result = 0;
+        for(char x : s.toCharArray())
+            result ^= x;
 
-        for (int i = 0; i < s.length(); i++) {
-            char ch = s.charAt(i);
-            map.put(ch, map.getOrDefault(ch, 0) + 1);
-        }
+        for(char x : t.toCharArray())
+            result ^= x;
 
-        for (int i = 0; i < t.length(); i++) {
-            char ch = t.charAt(i);
-
-            if (map.getOrDefault(ch, 0) == 0) {
-                return ch;
-            }
-
-            map.put(ch, map.get(ch) - 1);
-        }
-
-        return ' ';
+            return result;
     }
 }
